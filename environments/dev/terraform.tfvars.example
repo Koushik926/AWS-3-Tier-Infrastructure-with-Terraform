@@ -1,0 +1,63 @@
+# =============================================================================
+# AWS 3-Tier Infrastructure - Development Environment Variables
+# =============================================================================
+#
+# Copy this file to terraform.tfvars and fill in the values:
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# IMPORTANT: terraform.tfvars is in .gitignore - never commit it!
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# REQUIRED VARIABLES (you must provide these)
+# -----------------------------------------------------------------------------
+
+# Your public IP address for SSH access to the bastion host
+# Find your IP: curl -s https://checkip.amazonaws.com
+# Format: "YOUR_IP/32" (e.g., "203.0.113.50/32")
+my_ip_cidr = "YOUR_PUBLIC_IP/32"
+
+# Name of an existing EC2 key pair in your AWS account
+# Create one in AWS Console: EC2 > Key Pairs > Create key pair
+key_pair_name = "your-key-pair-name"
+
+# Email address for CloudWatch alarm notifications
+# You will need to confirm the subscription via email
+alert_email = "your-email@example.com"
+
+# -----------------------------------------------------------------------------
+# OPTIONAL VARIABLES (defaults are suitable for development)
+# -----------------------------------------------------------------------------
+
+# Project Configuration
+# project_name = "aws-3tier"
+# environment  = "dev"
+# aws_region   = "ap-south-1"
+# owner        = "R Koushik"
+
+# Network Configuration
+# vpc_cidr           = "10.0.0.0/16"
+# single_nat_gateway = true  # Set to false for HA (one NAT per AZ, higher cost)
+
+# Compute Configuration
+# app_instance_type    = "t3.micro"
+# app_port             = 80
+# asg_min_size         = 2
+# asg_max_size         = 4
+# asg_desired_capacity = 2
+
+# Database Configuration
+# db_instance_class    = "db.t3.micro"
+# db_name              = "appdb"
+# db_username          = "admin"
+# db_allocated_storage = 20
+# multi_az             = false  # Set to true for production (higher cost)
+
+# Load Balancer Configuration
+# acm_certificate_arn    = ""  # Provide ACM cert ARN for HTTPS
+# enable_alb_access_logs = false
+# alb_access_logs_bucket = ""
+
+# Monitoring Configuration
+# cpu_alarm_threshold = 70
+# scaling_target_cpu  = 50

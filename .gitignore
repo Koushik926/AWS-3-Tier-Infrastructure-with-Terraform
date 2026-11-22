@@ -1,0 +1,59 @@
+# Terraform State Files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Terraform Variable Files (may contain secrets)
+*.tfvars
+!terraform.tfvars.example
+
+# Crash log files
+crash.log
+crash.*.log
+
+# SSH Keys
+*.pem
+*.pub
+id_rsa
+id_ed25519
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Backend configuration (may contain bucket names)
+*.backend.hcl
+
+# Local .terraform directories
+**/.terraform/*
+
+# Plan files
+*.tfplan
+plan.out
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Sensitive files
+secrets/
+*.env
+.env.*
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+temp/
